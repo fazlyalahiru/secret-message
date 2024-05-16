@@ -9,7 +9,8 @@ export const verificationEmail = async (username: string, email: string, verifyc
         await resend.emails.send({
             from: 'Acme <onboarding@resend.dev>',
             to: email,
-            subject: 'OTP Verification ',
+            subject: 'OTP Verification | Secret Message',
+            //@ts-ignore
             react: VerificaitonEmailTemplate({ username: username, otp: verifycode }),
         });
 
